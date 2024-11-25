@@ -4,8 +4,11 @@ import requests
 api_url = "https://api.spoonacular.com/recipes/complexSearch"
 api_key = "c0cef1272563483684104551eb97978e"  #replace api key pls
 query_params = {
-    "query": "pasta",  
+    # "query": "pasta",  
     "diet": "vegetarian",  
+    "include_ingredients":"tomato,cheese",
+    "ignorePantry": True,
+
 
     "apiKey": api_key
 }
