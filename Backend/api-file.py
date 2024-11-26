@@ -2,7 +2,7 @@ from db_handling import get_fridge_contents
 import requests
 
 
-def fetch_recipes(user_name):
+def fetch_recipes():
 
     fridge_contents = get_fridge_contents() # usually will pass username
 
