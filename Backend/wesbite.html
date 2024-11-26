@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dietary Filter Prototype</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .filter-section {
+      margin-bottom: 20px;
+    }
+    .recipes {
+      list-style: none;
+      padding: 0;
+    }
+    .recipes li {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+    }
+  </style>
+  <script>
+    function applyFilter() {
+      // Get all the checkboxes
+      const checkboxes = document.querySelectorAll('.filter-checkbox');
+      let queryParams = [];
+
+      // Collect checked filter values
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          queryParams.push(checkbox.value);
+        }
+      });
+
+      // Refresh the page with the selected filters as query parameters
+      window.location.search = `filters=${queryParams.join(',')}`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Recipe Suggestions</h1>
+  <div class="filter-section">
+    <h3>Apply Dietary Filters:</h3>
+    <label>
+      <input type="checkbox" class="filter-checkbox" value="vegan" onchange="applyFilter()"> Vegan
+    </label>
+    <label>
+      <input type="checkbox" class="filter-checkbox" value="vegetarian" onchange="applyFilter()"> Vegetarian
+    </label>
+    <label>
+      <input type="checkbox" class="filter-checkbox" value="gluten_free" onchange="applyFilter()"> Gluten Free
+    </label>
+    <label>
+      <input type="checkbox" class="filter-checkbox" value="dairy_free" onchange="applyFilter()"> Dairy Free
+    </label>
+    <label>
+      <input type="checkbox" class="filter-checkbox" value="pescetarian" onchange="applyFilter()"> Pescetarian
+    </label>
+  </div>
+
+  <h3>Recipes:</h3>
+  <ul class="recipes">
+<!-- recipes will be listed here -->
+  </ul>
+</body>
+</html>
