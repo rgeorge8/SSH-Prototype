@@ -29,4 +29,4 @@ def get_fridge_contents(): # will pass on user_name
     #print(f"Fridge contents retrieved for userID {user_id}: {fridge_contents}")
     conn.close()
 
-    return ",".join(fridge_contents) if fridge_contents else "No contents in the fridge was found" # api include_ingerdient tags takes a lsit of ingredients in a string separated by commas
+    return ",".join(fridge_contents) if fridge_contents else None # api include_ingerdient tags takes a lsit of ingredients in a string separated by commas
